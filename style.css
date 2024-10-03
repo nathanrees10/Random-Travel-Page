@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1c1c;  /* Fallback color in case the background image doesn't load */
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    background: url('background.jpg') no-repeat center center/cover; /* Using the local background image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.5);  /* Darkens the background image */
+    animation: slide 15s ease-in-out infinite;  /* Optional background animation */
+}
+
+/* Background Animation (optional, for movement effect) */
+@keyframes slide {
+    0%, 100% {
+        background-position: center;
+    }
+    50% {
+        background-position: bottom;
+    }
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(0, 0, 0, 0.7);  /* Transparent black for text background */
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #f1c40f;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);  /* Adds shadow to the heading */
+}
+
+/* Button Styling */
+#generateButton {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#generateButton:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);  /* Button grows slightly on hover */
+}
+
+/* Result Section Styling */
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);  /* Semi-transparent background for results */
+    color: #2c3e50;
+    border-radius: 15px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(20px);  /* Initially hidden with a slight vertical offset */
+    transition: all 0.5s ease;  /* Smooth reveal animation */
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);  /* When "show" class is added, the result fades in and moves up */
+}
+
+/* Destination and Description Styling */
+#destination {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e74c3c;  /* Red color for destination name */
+    margin-bottom: 10px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#description {
+    font-size: 1.1rem;
+    color: #34495e;  /* Dark gray for description text */
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+footer p {
+    text-align: center;
+    color: #ffffff;
+}
